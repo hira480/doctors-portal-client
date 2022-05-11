@@ -4,7 +4,7 @@ import PrimaryButton from '../Shared/PrimaryButton';
 
 const Exceptional = () => {
     return (
-        <div class="hero min-h-screen">
+        <div class="hero min-h-screen px-12">
             <div class="hero-content grid grid-cols-1 lg:grid-cols-2 gap-4">
                 <div>
                     <img src={treatment} class="max-w-sm rounded-lg shadow-2xl" />
