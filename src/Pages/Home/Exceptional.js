@@ -7,7 +7,7 @@ const Exceptional = () => {
         <div className="hero min-h-screen ">
             <div className="hero-content grid grid-cols-1 lg:grid-cols-2 gap-4">
                 <div>
-                    <img src={treatment} className="max-w-sm w-full lg:ml-44 rounded-lg shadow-2xl" />
+                    <img src={treatment} className="max-w-sm w-full lg:ml-44 rounded-lg shadow-2xl" alt='' />
                 </div>
                 <div className='lg:pr-32'>
                     <h1 className="text-5xl font-bold">Exceptional Dental Care, on Your Terms</h1>
