@@ -8,6 +8,8 @@ import RequireAuth from './Pages/Login/RequireAuth';
 import ResetPassword from './Pages/Login/ResetPassword';
 import SignUp from './Pages/Login/SignUp';
 import Navbar from './Pages/Shared/Navbar';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 function App() {
   return (
@@ -25,6 +27,7 @@ function App() {
         <Route path='/signup' element={<SignUp></SignUp>}></Route>
         <Route path='/resetpass' element={<ResetPassword></ResetPassword>}></Route>
       </Routes>
+      <ToastContainer />
     </div>
   );
 }

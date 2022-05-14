@@ -3,6 +3,7 @@ import { useForm } from "react-hook-form";
 import { useSendPasswordResetEmail } from 'react-firebase-hooks/auth';
 import auth from '../../firebase.init';
 import Loading from '../Shared/Loading';
+import { toast } from 'react-toastify';
 
 const ResetPassword = () => {
     const [sendPasswordResetEmail, sending] = useSendPasswordResetEmail(auth);
@@ -13,6 +14,7 @@ const ResetPassword = () => {
     }
     const onSubmit = data => {
         sendPasswordResetEmail(data.email);
+        toast('Send Password Reset Email');
     };
     return (
         <div className='flex h-screen justify-center items-center'>
