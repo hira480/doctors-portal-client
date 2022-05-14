@@ -14,6 +14,7 @@ const Login = () => {
         loading,
         error,
     ] = useSignInWithEmailAndPassword(auth);
+    // const [sendEmailVerification, sending, sendingError] = useSendEmailVerification(auth);
     // const [sendPasswordResetEmail, sending] = useSendPasswordResetEmail(auth);
 
     let signInError;
@@ -36,6 +37,7 @@ const Login = () => {
 
     const onSubmit = data => {
         signInWithEmailAndPassword(data.email, data.password);
+
     };
 
     // const resetPassword = async () => {
