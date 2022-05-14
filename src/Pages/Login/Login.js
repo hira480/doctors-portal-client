@@ -14,6 +14,7 @@ const Login = () => {
         loading,
         error,
     ] = useSignInWithEmailAndPassword(auth);
+    // const [sendPasswordResetEmail, sending] = useSendPasswordResetEmail(auth);
 
     let signInError;
     let navigate = useNavigate();
@@ -33,11 +34,21 @@ const Login = () => {
         signInError = <p className='text-red-500 text-sm'>{error?.message || gError?.message}</p>
     }
 
-
-
     const onSubmit = data => {
         signInWithEmailAndPassword(data.email, data.password);
     };
+
+    // const resetPassword = async () => {
+    //     const email = watch('email');
+    //     console.log(email);
+    //     if (email) {
+    //         await sendPasswordResetEmail(email);
+    //         alert('Email Sent')
+    //     }
+    //     else {
+    //         alert('Enter your email');
+    //     }
+    // }
 
     return (
         <div className='flex h-screen justify-center items-center'>
@@ -93,13 +104,14 @@ const Login = () => {
                                     }
                                 })}
                             />
+                            <span className="label-text-alt">Forget Password? <Link to='/resetpass' className='text-secondary btn btn-xs btn-link' >Reset Password</Link></span>
+
                             <label className="label">
                                 {errors.password?.type === 'required' && <span className="label-text-alt text-red-500">{errors.password.message}</span>}
                                 {errors.password?.type === 'minLength' && <span className="label-text-alt text-red-500">{errors.password.message}</span>}
 
                             </label>
                         </div>
-
                         {signInError}
                         <input className='btn w-full max-w-xs' type="submit" value='Login' />
                     </form>
