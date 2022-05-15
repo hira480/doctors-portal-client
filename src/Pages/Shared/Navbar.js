@@ -15,6 +15,9 @@ const Navbar = () => {
         <li><Link to='/appointment'>Appoinment</Link></li>
         <li><Link to='/review'>Review</Link></li>
         <li><Link to='/contact'>Contact</Link></li>
+        {
+            user && <li><Link to='/dashboard'>Dashboard</Link></li>
+        }
         <li>{user ? <Link to='' onClick={logout} className=" btn-ghost">Sign Out</Link> : <Link to='/login'>Login</Link>}</li>
     </>
     return (
@@ -30,7 +33,7 @@ const Navbar = () => {
                 </div>
                 <Link to='/' className="btn btn-ghost normal-case text-xl">Doctors Portal</Link>
             </div>
-            <div className="navbar-end hidden lg:flex">
+            <div className="navbar-end w-full hidden lg:flex">
                 <ul className="menu menu-horizontal p-0">
                     {menuItems}
                 </ul>
