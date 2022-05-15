@@ -15,10 +15,10 @@ const MyAppointment = () => {
     }, [user]);
 
     return (
-        <div>
-            <h2>My Appointment {appointments.length}</h2>
-            <div class="overflow-x-auto">
-                <table class="table w-full">
+        <div className='lg:px-12'>
+            <h2 className='text-2xl font-semibold mb-5'>My Appointments</h2>
+            <div className="overflow-x-auto">
+                <table className="table w-full">
                     <thead>
                         <tr>
                             <th></th>
@@ -30,8 +30,8 @@ const MyAppointment = () => {
                     </thead>
                     <tbody>
                         {
-                            appointments.map(a => <tr>
-                                <th>1</th>
+                            appointments.map((a, index) => <tr>
+                                <th>{index + 1}</th>
                                 <td>{a.patientName}</td>
                                 <td>{a.date}</td>
                                 <td>{a.slot}</td>
