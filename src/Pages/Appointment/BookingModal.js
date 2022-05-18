@@ -6,7 +6,7 @@ import { toast } from 'react-toastify';
 
 const BookingModal = ({ date, treatment, setTreatment, refetch }) => {
     const { _id, name, slots } = treatment;
-    const [user, loading, error] = useAuthState(auth);
+    const [user] = useAuthState(auth);
     const formatedDate = format(date, 'PP');
 
     const handelBooking = event => {
